@@ -9,12 +9,11 @@ $(window).scroll(function(){
     $('.img1').css({'transform':`rotateZ(${rotateDeg}deg)`})
     
     if (top > $('.profile').offset().top - $(window).height() / 3.2) {
-        console.log('kek')
         $('.profile h4').css({ 'transform': 'translateY(0%)' })
     }
 
     if (top > $('.works').offset().top - $(window).height()) {
-        var offset = (Math.min(0, top - $('.works').offset().top + $(window).height() - 350)).toFixed();
+        var offset = (Math.min(0, top - $('.works').offset().top + $(window).height() - 400)).toFixed();
 
         $('.works a:nth-child(1)').css({ 'transform': 'translate(' + offset + 'px, ' + Math.abs(offset * 0.2) + 'px)' });
 

@@ -78,10 +78,15 @@ nav .links a{
         display: block;
         width: 99%;
         height: 7vh;
+        text-transform: capitalize;
         display: flex;
         align-items: center;
         justify-content: center;
-        border: 2px solid yellowgreen
+        border: 2px solid yellowgreen;
+        &:hover{
+            background-color: yellowgreen;
+            color: #333;
+        }
     }
 }
 
@@ -170,11 +175,12 @@ nav .links a{
     margin: 50px auto;
     display: grid;
     grid-gap: 20px;
-    width: 50%;
+    width: 80%;
     grid-template-columns: 1fr 1fr 1fr;
     justify-items: center;
     text-align: center;
     align-items: center;
+    overflow: hidden;
     a{
         display: block;
         height: 20vh;
@@ -246,7 +252,7 @@ nav .links a{
     .works{
         grid-template-columns: 1fr;
         a{
-            width: 44vw;
+            width: 30vw;
             margin-top: 10px;
         }
     }
