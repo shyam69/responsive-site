@@ -23,6 +23,9 @@ nav{
             display: flex;
             align-items: center;
             height: 100%;
+            a:hover{
+                color: yellowgreen
+            }
             }
         }
    .logo{
@@ -63,13 +66,14 @@ nav .links a{
     overflow: hidden;
     justify-content: space-between;
     align-items: center;
+    z-index: 3;
     flex-direction: column;
     background-color: #333;
     transition: 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
     a{
         text-decoration: none;
         color: white;
-        margin-top: 5px;
+        // margin-top: 5px;
         background-color: #333;
         display: block;
         width: 99%;
@@ -77,13 +81,15 @@ nav .links a{
         display: flex;
         align-items: center;
         justify-content: center;
-        border: 2px solid white
+        border: 2px solid yellowgreen
     }
 }
 
 .noparallax{
+   /*  position: absolute;
+    top: 9vh; */
     width: 100%;
-    height: 55vh;
+    height: 90vh;
     background-color: #333;
     display: flex;
     align-items: center;
@@ -127,7 +133,10 @@ nav .links a{
 .profile{
     margin-top: 30px;
     display: flex;
+    flex-direction: column;
     justify-content: center;
+    align-items: center;
+    overflow: hidden;
     .pic{
         background-image: url(pfp.jpeg);
         background-position: top center;
@@ -135,8 +144,74 @@ nav .links a{
         background-attachment: fixed;
         width: 200px;
         height: 200px;
+        border: 4px solid yellowgreen;
+        border-radius: 50%
+    }
+    .bio{
+        color: white;
+        margin: 25px;
+        width: 40%;
+        h4{
+            line-height: 2;
+            transform: translateY(-300%);
+            transition: 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        }
+    }
 }
+
+.workHead{
+    margin-top: 40px;
+    color: yellowgreen;
+    text-align: center;
+    text-transform: uppercase
 }
+
+.works{
+    margin: 50px auto;
+    display: grid;
+    grid-gap: 20px;
+    width: 50%;
+    grid-template-columns: 1fr 1fr 1fr;
+    justify-items: center;
+    text-align: center;
+    align-items: center;
+    a{
+        display: block;
+        height: 20vh;
+        width: 18vw;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background: yellowgreen;
+        color: #333;
+        text-decoration: none;
+        font-weight: bolder;
+        &:hover{
+            opacity: 0.8;
+        }
+        
+    }
+}
+
+.contact{
+    height: 30vw;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    h2{
+        color: yellowgreen;
+    }
+    .social img{
+        margin-top: 20px;
+        margin-left: 20px;
+        width: 40px;
+        height: 40px;
+
+    }
+}
+
 
 @media screen and (max-width: 425px){
     nav{
@@ -157,5 +232,22 @@ nav .links a{
     }
     .hamactive{
         width: 100%
+    }
+
+    .profile{
+         .bio {
+            width: 72%;
+            h4{
+                line-height: 2
+            }
+        }
+    }
+
+    .works{
+        grid-template-columns: 1fr;
+        a{
+            width: 44vw;
+            margin-top: 10px;
+        }
     }
 }
