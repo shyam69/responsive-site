@@ -3,6 +3,11 @@ $('.ham span').on('click',function(){
     return false
 })
 
+$(document).on('click', function () {
+    $('.hampopup').removeClass('hamactive')
+    return false
+})
+
 $(window).scroll(function(){
     var top = $(this).scrollTop()
     var rotateDeg = Math.min(90,top*0.7)
