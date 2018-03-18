@@ -3,10 +3,6 @@ $('.ham span').on('click',function(){
     return false
 })
 
-$(document).on('click', function () {
-    $('.hampopup').removeClass('hamactive')
-    return false
-})
 
 $(window).scroll(function(){
     var top = $(this).scrollTop()
@@ -23,6 +19,10 @@ $(window).scroll(function(){
         $('.works a:nth-child(1)').css({ 'transform': 'translate(' + offset + 'px, ' + Math.abs(offset * 0.2) + 'px)' });
 
         $('.works a:nth-child(3)').css({ 'transform': 'translate(' + Math.abs(offset) + 'px, ' + Math.abs(offset * 0.2) + 'px)' });
+    }
+
+    if(top>190){
+        $('.hampopup').removeClass('hamactive')
     }
 })
 

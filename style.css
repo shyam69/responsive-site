@@ -83,7 +83,7 @@ nav .links a {
   z-index: 3;
   flex-direction: column;
   background: linear-gradient(to right, #77c9d4, #57bc90);
-  transition: 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  transition: 0.3s cubic-bezier(0.075, 0.82, 0.165, 1);
 }
 
 .hampopup a {
@@ -234,6 +234,7 @@ nav .links a {
 
 .contact h2 {
   color: #fff;
+  margin: 0 auto;
 }
 
 .contact .social a {
@@ -243,9 +244,9 @@ nav .links a {
 
 .contact .social a img {
   margin-top: 20px;
-  margin-left: 20px;
   width: 40px;
   height: 40px;
+  padding: 0 10px;
 }
 
 @media screen and (max-width: 425px) {
