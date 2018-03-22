@@ -9,7 +9,7 @@ $('.ham span').on('click',function(){
 //     console.log(top)
 //     var rotateDeg = Math.min(90,top*0.7)
 //     $('.img1').css({'transform':`rotateZ(${rotateDeg}deg)`})
-    
+
 //     if (top > $('.profile').offset().top - $(window).height() / 3.2) {
 //         $('.profile h4').css({ 'transform': 'translateY(0%)' })
 //     }
@@ -29,19 +29,27 @@ $('.ham span').on('click',function(){
 
 $(window).scroll(function () {
     var top = $(this).scrollTop()
+    var screenHeight = window.innerHeight
     console.log(top)
-    
-    if(top<550){
-        $('.noparallax').css({ 'position': 'fixed','top':'9vh'})
-        var displace = Math.min(100,top/5.5)
-        $('.part1').css({'transform':`translateX(-${100-displace}px`})
-        $('.part2').css({'font-size':`${200-displace}px`})
-        $('.part3').css({ 'transform': `translateX(${100 - displace}px` })
-        if(displace >97 ){
-            $('.noparallax').css({ 'position': 'absolute', 'top': `9vh` })
-            $('.noparallax').css({ 'position': 'absolute','top':`${top}px` })
-        }
 
+    // if(top<550){
+    //     $('.noparallax').css({ 'position': 'fixed','top':'9vh'})
+    //     var displace = Math.min(100,top/5.5)
+    //     $('.part1').css({'transform':`translateX(-${100-displace}px`})
+    //     $('.part2').css({'font-size':`${200-displace}px`})
+    //     $('.part3').css({ 'transform': `translateX(${100 - displace}px` })
+    //     if(displace >97 ){
+    //         $('.noparallax').css({ 'position': 'absolute', 'top': `9vh` })
+    //         $('.noparallax').css({ 'position': 'absolute','top':`${top}px` })
+    //     }
+    //
+    // }
+
+    if (top > screenHeight) {
+      console.log('passed')
+      $('.noparallax').css({ 'position': 'absolute','bottom':'150px'})
+    } else {
+      $('.noparallax').css({ 'position': 'fixed','bottom':'150px'})
     }
 
     // if(top>550 && top< 560){
@@ -66,4 +74,3 @@ $(window).scroll(function () {
         $('.hampopup').removeClass('hamactive')
     }
 })
-

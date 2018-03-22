@@ -105,11 +105,17 @@ nav .links a {
   color: #fff;
 }
 
+.hero {
+  position: relative;
+  height: 150vh;
+  width: 100%;
+}
+
 .noparallax {
   position: fixed;
-  top: 9vh;
+  bottom: 150px;
   width: 100%;
-  height: 100vh;
+  height: 300px;
   background: linear-gradient(to right, #77c9d4, #57bc90);
   display: flex;
   align-items: center;
