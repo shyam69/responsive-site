@@ -6,10 +6,12 @@
 body{
     background: linear-gradient(to right, #77c9d4, #57bc90);
     font-family: 'Raleway', sans-serif;
+    position: relative;
+    // font-family: 'IBM Plex Mono', monospace;
 }
 
 nav{
-    position: absolute;
+    position: fixed;
     width: 100%;
     display: flex;
     background: linear-gradient(to right, #77c9d4, #57bc90);
@@ -99,21 +101,36 @@ nav .links a{
 }
 
 .noparallax{
-    overflow: hidden;
+    // overflow: hidden;
+    position: fixed;
+    top: 9vh;
     width: 100%;
-    height: 90vh;
+    height: 100vh;
     background: linear-gradient(to right, #77c9d4, #57bc90);
+    // background-color: red;
     display: flex;
     align-items: center;
     justify-content: center;
-    .img1{
-        background-image: url(img2.png);
-        width: 50%;
-        height: 50%;
-        background-position: center;
-        background-size: contain;
-        background-repeat: no-repeat;
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 140px;
+    font-weight: 600;
+    z-index: 3;
+    color: #fff;
+    .part1{
+        transform: translateX(-100px)
     }
+    .part2{
+        font-size: 200px;
+        transform: rotateZ(7deg);
+    }
+    .part3{
+        transform: translateX(100px)
+    }
+}
+
+.content{
+    position: relative;
+    top:209vh;
 }
 
 .heading{
