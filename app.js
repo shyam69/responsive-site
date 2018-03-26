@@ -30,7 +30,7 @@ $('.ham span').on('click',function(){
 $(window).scroll(function () {
     var top = $(this).scrollTop()
     var screenHeight = window.innerHeight
-    console.log(top)
+    // console.log(top)
 
     // if(top<550){
     //     $('.noparallax').css({ 'position': 'fixed','top':'9vh'})
@@ -49,7 +49,12 @@ $(window).scroll(function () {
       console.log('passed')
       $('.noparallax').css({ 'position': 'absolute','bottom':'150px'})
     } else {
+      // console.log(top)
       $('.noparallax').css({ 'position': 'fixed','bottom':'150px'})
+          var displace = Math.min(100,top/5.5)
+          $('.part1').css({'transform':`translateX(-${100-displace}px`})
+          $('.part2').css({'font-size':`${200-displace}px`})
+          $('.part3').css({ 'transform': `translateX(${100 - displace}px` })
     }
 
     // if(top>550 && top< 560){
@@ -57,18 +62,18 @@ $(window).scroll(function () {
     //     $('.noparallax').css({'position':'absolute',
     //                             'top':`${550}px`})
     // }
-
-    if (top > $('.profile').offset().top - $(window).height() / 3.2) {
-        $('.profile h4').css({ 'transform': 'translateY(0%)' })
-    }
-
-    if (top > $('.works').offset().top - $(window).height()) {
-        var offset = (Math.min(0, top - $('.works').offset().top + $(window).height() - 400)).toFixed();
-
-        $('.works a:nth-child(1)').css({ 'transform': 'translate(' + offset + 'px, ' + Math.abs(offset * 0.2) + 'px)' });
-
-        $('.works a:nth-child(3)').css({ 'transform': 'translate(' + Math.abs(offset) + 'px, ' + Math.abs(offset * 0.2) + 'px)' });
-    }
+    //
+    // if (top > $('.profile').offset().top - $(window).height() / 3.2) {
+    //     $('.profile h4').css({ 'transform': 'translateY(0%)' })
+    // }
+    //
+    // if (top > $('.works').offset().top - $(window).height()) {
+    //     var offset = (Math.min(0, top - $('.works').offset().top + $(window).height() - 400)).toFixed();
+    //
+    //     $('.works a:nth-child(1)').css({ 'transform': 'translate(' + offset + 'px, ' + Math.abs(offset * 0.2) + 'px)' });
+    //
+    //     $('.works a:nth-child(3)').css({ 'transform': 'translate(' + Math.abs(offset) + 'px, ' + Math.abs(offset * 0.2) + 'px)' });
+    // }
 
     if (top > 190) {
         $('.hampopup').removeClass('hamactive')
