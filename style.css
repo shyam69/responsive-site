@@ -113,10 +113,11 @@ nav .links a {
 
 .noparallax {
   position: fixed;
+  left: calc(50% - 115px);
   bottom: 150px;
-  width: 100%;
+  width: 230px;
   height: 300px;
-  background: linear-gradient(to right, #77c9d4, #57bc90);
+  background: transparent;
   display: flex;
   align-items: center;
   justify-content: center;
