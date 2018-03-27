@@ -26,7 +26,9 @@ $('.ham span').on('click',function(){
 //         $('.hampopup').removeClass('hamactive')
 //     }
 // })
-
+let i=0;
+var topDistance = 0;
+var transformDegree = 0;
 $(window).scroll(function () {
     var top = $(this).scrollTop()
     var screenHeight = window.innerHeight
@@ -46,10 +48,22 @@ $(window).scroll(function () {
     // }
 
     if (top > screenHeight) {
-      console.log('passed')
+      topDistance = ($('.noparallax').offset().top - top)
+      console.log('passed', (90 - topDistance / (Math.PI/2))/90, topDistance / (Math.PI/2))
       $('.noparallax').css({ 'position': 'absolute','bottom':'150px'})
+      if ((90 - topDistance / (Math.PI/2)) > 90)
+        transformDegree = 90
+      else if ((90 - topDistance / (Math.PI/2)) < 0)
+        transformDegree = 0
+      else
+        transformDegree = 90 - topDistance / (Math.PI/2)
+      // var rotateDeg = Math.min(90,($('.noparallax').offset().top - top)/3.2*-1)
+      // var deg = ((($('.noparallax').offset().top + top)/Math.PI/4.9)%100)*5
+      // var rotateDeg = deg > 90 ? 90 : deg
+      $('.noparallax').css({'transform':`rotate(${transformDegree}deg)`})
     } else {
       // console.log(top)
+      $('.noparallax').css({'transform':`rotate(0deg)`})
       $('.noparallax').css({ 'position': 'fixed','bottom':'150px'})
           var displace = Math.min(100,top/5.5)
           $('.part1').css({'transform':`translateX(-${100-displace}px`})
