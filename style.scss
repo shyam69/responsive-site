@@ -4,15 +4,21 @@
 }
 
 body{
-    background: linear-gradient(to right, #77c9d4, #57bc90);
+    background: linear-gradient(to bottom, #292E49, #536976, #BBD2C5);
+    // background: linear-gradient(to right, #3f2b96, #a8c0ff);
+    // background: linear-gradient(to right, #6A82FB, #FC5C7D);
     font-family: 'Raleway', sans-serif;
 }
 
+.hero{
+    position: relative;
+    height: 200vh;
+}
 nav{
     position: absolute;
     width: 100%;
     display: flex;
-    background: linear-gradient(to right, #77c9d4, #57bc90);
+    background-color: linear-gradient(to bottom, #292E49, #536976, #BBD2C5);
     height: 9vh;
     justify-content: space-between;
     align-items: center;
@@ -32,7 +38,7 @@ nav{
                 font-family: sans-serif;
                 text-transform: capitalize;
                 &:hover{
-                    color: #015249;
+                    color: lighten($color: #292E49, $amount: 50%)
                 }
             }
             }
@@ -72,17 +78,17 @@ nav .links a{
     height: 30vh;
     width: 0;
     overflow: hidden;
-    justify-content: space-between;
+    justify-content: flex-start;
     align-items: center;
     z-index: 3;
     flex-direction: column;
-    background: linear-gradient(to right, #77c9d4, #57bc90);
+    // background: linear-gradient(to bottom, #292E49, #536976, #BBD2C5);
     transition: 0.3s cubic-bezier(0.075, 0.82, 0.165, 1);
     a{
         text-decoration: none;
         color: white;
         // margin-top: 5px;
-        background: #57bc90;
+        background: transparentize($color: #292E49, $amount: 0.4);
         display: block;
         width: 99%;
         height: 7vh;
@@ -92,32 +98,38 @@ nav .links a{
         justify-content: center;
         // border-bottom: 1px solid #fff;
         &:hover{
-            background:linear-gradient(to right, #77c9d4, #57bc90);
+            background: darken($color: #292E49, $amount: 5%);
             color: #fff
         }
     }
 }
 
-.noparallax{
-    overflow: hidden;
-    width: 100%;
-    height: 90vh;
-    background: linear-gradient(to right, #77c9d4, #57bc90);
+.logobig{
+    width: 300px;
+    position: fixed;
+    bottom: 90px;
+    left: calc(50% - 150px);
+    height: 300px;
     display: flex;
-    align-items: center;
     justify-content: center;
-    .img1{
-        background-image: url(img2.png);
-        width: 50%;
-        height: 50%;
-        background-position: center;
-        background-size: contain;
-        background-repeat: no-repeat;
+    align-items: center;
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 140px;
+    font-weight: 600;
+    transform: rotateZ(0deg);
+    color: white;
+    .part1 {
+    transform: translateX(-100px);
+    };
+    .part2 {
+    font-size: 200px;
+    transform: rotateZ(7deg);
+    };
+    .part3 {
+    transform: translateX(100px);
     }
 }
-
 .heading{
-    background: linear-gradient(to right, #77c9d4, #57bc90);
     display: flex;
     padding-bottom: 40px;
     flex-direction: column;
@@ -126,26 +138,9 @@ nav .links a{
     color: #fff;
 
 }
-/* .animatedsbar{
-    margin-top: 20px;
-    text-align: center;
-    color: #fff;
-    animation-name: bar;
-    animation-duration: 1.5s;
-    animation-iteration-count: infinite;
-    animation-timing-function: ease-out
-
-}
-
-@keyframes bar {
-    0%{opacity: 0;
-    transform: scale(0)}
-    50%{opacity: 0.5;}
-    100%{opacity: 1;}
-} */
 
 .profile{
-    background-color: #57bc90;
+    background-color: linear-gradient(to bottom, #292E49, #536976, #BBD2C5);
     width: 80%;
     margin: 30px auto;
     display: flex;
@@ -162,13 +157,16 @@ nav .links a{
         width: 200px;
         height: 200px;
         border: 4px solid #fff;
-        border-radius: 50%
+        border-radius: 50%;
+        transform: scale(1);
     }
     .bio{
         color: white;
         margin: 25px;
-        width: 40%;
+        bottom: 0;
+        width: 70%;
         h4{
+            text-align: center;
             line-height: 2;
             transform: translateY(-300%);
             transition: 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275);
@@ -201,12 +199,12 @@ nav .links a{
         justify-content: center;
         align-items: center;
         overflow: hidden;
-        background: #57bc90;
+        background-color: darken($color: #BBD2C5, $amount: 5%); 
         color: white;
         text-decoration: none;
         font-weight: bolder;
         &:hover{
-            background: linear-gradient(to right, #77c9d4, #57bc90);
+            background-color: lighten($color:#536976, $amount: 10%);
         }
         
     }
