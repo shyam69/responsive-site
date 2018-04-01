@@ -237,8 +237,16 @@ nav .links a{
 }
 
 
-@media screen and (max-width: 425px){
+@media screen and (max-width: 768px){
+
+    .hero{
+        position: relative;
+        height: 100vh;
+        overflow: hidden;
+    }
+
     nav{
+        position: absolute;
         .links{
             display: none
         }
@@ -258,35 +266,53 @@ nav .links a{
         width: 100%
     }
 
+    .logobig{
+        overflow: hidden;
+        width: 60vw;
+        position: relative;
+        top: 9vh;
+        left: calc(50% - 30vw);
+        height: 90vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-family: 'IBM Plex Mono', monospace;
+        font-size: 8rem;
+        font-weight: 600;
+        transform: rotateZ(0deg);
+        color: white;
+        .part1 {
+        transform: translateX(0);
+        };
+        .part2 {
+        font-size: 6rem;
+        transform: rotateZ(7deg);
+        };
+        .part3 {
+        transform: translateX(0);
+        }
+    }
+
     .profile{
+        overflow: hidden;
         width: 90%;
          .bio {
             width: 80%;
             h4{
-                line-height: 1.5
+                line-height: 1.5;
+                transform: translateY(-300%);
             }
         }
     }
 
     .works{
+        overflow: hidden;
         grid-template-columns: 1fr;
         width:90%;
         margin-top: 10px;
         a{
-            width: 80%;
-            // margin-top: 10px;
+            width: 60%;
         }
     }
 }
 
-@media screen and (max-width: 768px){
-    .profile{
-        width: 90%;
-         .bio {
-            width: 70%;
-            h4{
-                line-height: 1.5
-            }
-        }
-    }
-}
